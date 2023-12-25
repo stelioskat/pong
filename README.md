@@ -1,2 +1,4 @@
-# pong
-A Godot pong clone for practicing
+# Pong
+Yet another pong remake for learning purposes
+
+![Preview](preview.png "Pong")
