@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://y4teuh5sj72b"]
+
+[ext_resource type="Script" path="res://scenes/player.gd" id="1_plvfb"]
+[ext_resource type="Texture2D" uid="uid://brc7y0lh6adco" path="res://art/basic_tiles.svg" id="2_x2mlg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_86wwm"]
+size = Vector2(16, 64)
+
+[node name="Player" type="CharacterBody2D" groups=["player", "racket"]]
+script = ExtResource("1_plvfb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_86wwm")
+
+[node name="BasicTiles" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(0.5, 1)
+texture = ExtResource("2_x2mlg")
+hframes = 16
+vframes = 8
+frame = 6
