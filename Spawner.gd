@@ -1,12 +1,19 @@
 extends Marker2D
 
 var ball_scene = preload("res://scenes/ball.tscn")
+var active = true
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
+func start():
+	active = true
 	spawn()
+	
+func stop():
+	active = false
 
 func spawn():
+	if not active:
+		return
+		
 	var ball = ball_scene.instantiate() as CharacterBody2D
 	
 	# Randomize spawning position and direction
@@ -16,3 +23,10 @@ func spawn():
 	
 	ball.connect("destroyed", spawn)
 	call_deferred("add_child", ball)
+
+func on_game_start():
+	start()
+
+func on_game_over():
+	stop()
+	#propagate_call("queue_free")

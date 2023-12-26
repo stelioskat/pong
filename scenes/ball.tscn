@@ -9,7 +9,7 @@ size = Vector2(17, 17)
 
 [node name="Ball" type="CharacterBody2D" groups=["ball"]]
 slide_on_ceiling = false
-floor_stop_on_slope = false
+floor_constant_speed = true
 script = ExtResource("1_s6qew")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
